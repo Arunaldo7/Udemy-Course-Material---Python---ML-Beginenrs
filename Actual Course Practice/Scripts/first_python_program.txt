@@ -1,0 +1,17 @@
+Hello Everyone.
+
+I hope you all are excited about writing your first Python program.
+
+Let us start with printing some welcome message.
+
+print message
+
+so i have written this piece of text.
+
+How can we get computer know that this is a python file.
+
+So, now let us now save it (using .py extension)
+
+So the your computer executes it using Python Interpretor.
+
+Wait What? PYTHON INTERPRETOR?

@@ -1,0 +1,21 @@
+import pandas as pd;
+from sklearn.preprocessing import OneHotEncoder, LabelEncoder;
+
+train_dataset = pd.read_excel("game_state_dataset.xlsx");
+
+label_encoder_direction = LabelEncoder();
+label_encoder_direction.fit(train_dataset["player_move_direction"]);
+train_dataset["player_move_direction"] = label_encoder_direction.transform(train_dataset["player_move_direction"]);
+
+one_hot_encoder = OneHotEncoder();
+
+enc_data = pd.DataFrame(one_hot_encoder.fit_transform(
+    train_dataset[["player_move_direction"]]).toarray());
+
+#Merge with main
+New_df=train_dataset.join(enc_data);
+New_df = New_df.drop(columns = "player_move_direction")
+print("New_df.xols:", New_df.columns)
+
+
+
